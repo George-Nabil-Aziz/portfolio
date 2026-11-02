@@ -3,6 +3,9 @@ import { tr } from "@/i18n";
 import { profile } from "@/content/site";
 import { ui } from "@/content/ui";
 import { BlurText } from "@/components/BlurText";
+import { HeroAurora, Magnetic, Rotating, Shiny } from "@/components/fx";
+
+const rotating = ["ASP.NET Core", "React", "Angular", "Vue", "Next.js", "SQL Server"];
 
 const focus =
   "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
@@ -23,6 +26,16 @@ export function Hero({ locale }: { locale: Locale }) {
     <section className="relative overflow-hidden">
       <div
         aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-[70%]"
+        style={{
+          maskImage: "linear-gradient(to bottom, black 40%, transparent)",
+          WebkitMaskImage: "linear-gradient(to bottom, black 40%, transparent)",
+        }}
+      >
+        <HeroAurora />
+      </div>
+      <div
+        aria-hidden="true"
         className="pointer-events-none absolute inset-0 text-foreground opacity-[0.12]"
         style={{
           backgroundImage: "radial-gradient(currentColor 1px, transparent 1px)",
@@ -31,27 +44,35 @@ export function Hero({ locale }: { locale: Locale }) {
           WebkitMaskImage: mask,
         }}
       />
-      <div className="relative mx-auto max-w-5xl px-4 py-20 sm:px-6 sm:py-32">
+      <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 sm:py-32">
         <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-muted">
           <span className="relative flex size-2">
             <span className="absolute inline-flex size-full animate-ping rounded-full bg-green-500 opacity-60 motion-reduce:animate-none" />
             <span className="relative inline-flex size-2 rounded-full bg-green-500" />
           </span>
-          {tr(profile.available, locale)}
+          <Shiny text={tr(profile.available, locale)} />
         </span>
-        <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-6xl">
+        <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
           <BlurText text={tr(profile.name, locale)} />
         </h1>
-        <p className="mt-3 text-xl font-medium text-accent sm:text-2xl">
-          {tr(profile.role, locale)}
+        <p className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 text-xl font-medium sm:text-2xl">
+          <span className="text-accent">{tr(profile.role, locale)}</span>
+          <span dir="ltr" className="inline-flex">
+            <Rotating
+              texts={rotating}
+              className="overflow-hidden rounded-lg bg-accent px-3 py-0.5 text-white dark:text-zinc-950"
+            />
+          </span>
         </p>
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+        <p className="mt-6 max-w-3xl text-base leading-relaxed text-muted sm:text-lg">
           {tr(profile.tagline, locale)}
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-3">
-          <a href="#work" className={`${btn} bg-accent text-white hover:opacity-90`}>
-            {tr(ui.hero.viewWork, locale)}
-          </a>
+          <Magnetic>
+            <a href="#work" className={`${btn} bg-accent text-white hover:opacity-90 dark:text-zinc-950`}>
+              {tr(ui.hero.viewWork, locale)}
+            </a>
+          </Magnetic>
           <a href="#contact" className={outline}>
             {tr(ui.hero.contact, locale)}
           </a>

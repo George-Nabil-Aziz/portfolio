@@ -151,6 +151,40 @@ export const skills: SkillGroup[] = [
   },
 ];
 
+export const workProjects: Project[] = [
+  {
+    slug: "pr-rasd",
+    name: "Premium Residency Monitoring System",
+    company: "Azm Squad",
+    period: { en: "Aug 2026 – present", ar: "أغسطس 2026 – الآن" },
+    tagline: {
+      en: "Saudi government platform that monitors Premium Residency holders",
+      ar: "منصة حكومية سعودية لرصد ومتابعة حاملي الإقامة المميزة",
+    },
+    summary: {
+      en: "Monitoring dashboards, compliance tracking, case management and multi-step approval workflows — bilingual, with government SSO and integrations with external agencies.",
+      ar: "لوحات متابعة، وتتبع الامتثال، وإدارة الحالات، ومسارات موافقة متعددة الخطوات، بلغتين، مع SSO حكومي وربط مع جهات خارجية.",
+    },
+    stack: ["Angular 22", "Transloco", "ASP.NET Core", "EF Core", "SQL Server", "MediatR", "Hangfire", "MassTransit", "RabbitMQ", "Redis", "SAML SSO", "Docker", "Kubernetes"],
+  },
+  {
+    slug: "thepass",
+    name: "ThePass",
+    company: "Azm Squad",
+    period: { en: "Jan 2024 – Apr 2026", ar: "يناير 2024 – أبريل 2026" },
+    tagline: {
+      en: "AI-driven recruitment platform",
+      ar: "منصة توظيف بالذكاء الاصطناعي",
+    },
+    summary: {
+      en: "AI video interviews, an applicant tracking system, an exam engine and CSV / Excel / PDF reporting for hiring teams.",
+      ar: "مقابلات فيديو بالـ AI، ونظام تتبع متقدمين (ATS)، ومحرك امتحانات، وتقارير CSV / Excel / PDF لفرق التوظيف.",
+    },
+    stack: ["Vue 3", "React", "Tailwind CSS", "ASP.NET Core", "Web API", "EF Core", "SQL Server"],
+    live: "https://thepass.ai/",
+  },
+];
+
 export const featured: Project[] = [
   {
     slug: "crm",

@@ -34,7 +34,7 @@ export default async function ProjectPage({ params }: PageProps<"/[lang]/project
   return (
     <article className="mx-auto w-full max-w-3xl px-4 py-16 sm:px-6">
       <a
-        href={`/${lang}#work`}
+        href={`/${lang}#projects`}
         className="inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-foreground"
       >
         <span aria-hidden className="inline-block rtl:rotate-180">

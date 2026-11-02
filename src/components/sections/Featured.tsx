@@ -5,6 +5,7 @@ import { featured } from "@/content/site";
 import { ui } from "@/content/ui";
 import { Section } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
+import { GlowCard } from "@/components/fx";
 
 const focus =
   "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
@@ -12,14 +13,15 @@ const focus =
 export function Featured({ locale }: { locale: Locale }) {
   return (
     <Section
-      id="work"
+      id="projects"
       title={tr(ui.sections.featured, locale)}
       intro={tr(ui.sections.featuredIntro, locale)}
     >
       <div className="flex flex-col gap-6">
         {featured.map((p) => (
           <Reveal key={p.slug}>
-            <article className="rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-accent sm:p-8">
+            <GlowCard className="rounded-2xl">
+            <article className="p-6 sm:p-8">
               <h3 className="text-xl font-semibold sm:text-2xl">{p.name}</h3>
               <p className="mt-1 font-medium text-accent">{tr(p.tagline, locale)}</p>
               <p className="mt-4 max-w-3xl leading-relaxed text-muted">
@@ -79,6 +81,7 @@ export function Featured({ locale }: { locale: Locale }) {
                 )}
               </div>
             </article>
+            </GlowCard>
           </Reveal>
         ))}
       </div>

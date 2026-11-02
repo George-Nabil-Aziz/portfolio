@@ -3,6 +3,7 @@ import { moreProjects, templates, miniProjects } from "@/content/site";
 import { ui } from "@/content/ui";
 import { Section } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
+import { GlowCard } from "@/components/fx";
 
 const linkClass =
   "inline-flex items-center gap-1.5 rounded text-sm font-medium text-accent hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
@@ -31,7 +32,8 @@ export function MoreProjects({ locale }: { locale: Locale }) {
       <div className="grid gap-4 md:grid-cols-2">
         {moreProjects.map((p, i) => (
           <Reveal key={p.slug} delay={i * 0.08} className="h-full">
-            <article className="flex h-full flex-col rounded-2xl border border-border bg-surface p-6">
+            <GlowCard className="h-full rounded-2xl">
+            <article className="flex h-full flex-col p-6">
               <h3 className="text-lg font-semibold">{p.name}</h3>
               <p className="text-sm text-accent">{tr(p.tagline, locale)}</p>
               <p className="mt-3 text-muted">{tr(p.summary, locale)}</p>
@@ -51,6 +53,7 @@ export function MoreProjects({ locale }: { locale: Locale }) {
                 </div>
               )}
             </article>
+            </GlowCard>
           </Reveal>
         ))}
       </div>
@@ -59,7 +62,8 @@ export function MoreProjects({ locale }: { locale: Locale }) {
       <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {templates.map((t, i) => (
           <Reveal key={t.slug} delay={(i % 3) * 0.06} className="h-full">
-            <article className="flex h-full flex-col rounded-xl border border-border bg-surface p-4">
+            <GlowCard className="h-full rounded-xl">
+            <article className="flex h-full flex-col p-4">
               <h4 className="font-semibold">{t.name}</h4>
               <p className="mt-1 text-sm text-muted">{tr(t.tagline, locale)}</p>
               {t.live && (
@@ -71,6 +75,7 @@ export function MoreProjects({ locale }: { locale: Locale }) {
                 </div>
               )}
             </article>
+            </GlowCard>
           </Reveal>
         ))}
       </div>

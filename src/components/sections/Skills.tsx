@@ -3,9 +3,11 @@ import { skills } from "@/content/site";
 import { ui } from "@/content/ui";
 import { Section } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
+import { SkillsMarquee } from "@/components/fx";
 
 export function Skills({ locale }: { locale: Locale }) {
   return (
+    <>
     <Section id="skills" title={tr(ui.sections.skills, locale)}>
       <div className="grid gap-8 md:grid-cols-3">
         {skills.map((g, i) => (
@@ -25,5 +27,7 @@ export function Skills({ locale }: { locale: Locale }) {
         ))}
       </div>
     </Section>
+    <SkillsMarquee rows={skills.slice(0, 2).map((g) => g.items.join(" · "))} />
+    </>
   );
 }

@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { hasLocale } from "@/i18n";
 import { Hero } from "@/components/sections/Hero";
 import { Stats } from "@/components/sections/Stats";
+import { WorkProjects } from "@/components/sections/WorkProjects";
 import { Featured } from "@/components/sections/Featured";
 import { Experience } from "@/components/sections/Experience";
 import { Services } from "@/components/sections/Services";
@@ -17,6 +18,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
     <>
       <Hero locale={lang} />
       <Stats locale={lang} />
+      <WorkProjects locale={lang} />
       <Featured locale={lang} />
       <Experience locale={lang} />
       <Services locale={lang} />

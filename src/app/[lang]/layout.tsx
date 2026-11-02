@@ -6,6 +6,7 @@ import { dirOf, hasLocale, locales, tr } from "@/i18n";
 import { profile } from "@/content/site";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { Sparks } from "@/components/fx";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import "../globals.css";
 
@@ -50,7 +51,9 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
       <body className="flex min-h-dvh flex-col">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Header locale={lang} />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1">
+            <Sparks>{children}</Sparks>
+          </main>
           <Footer locale={lang} />
           <WhatsAppButton locale={lang} />
         </ThemeProvider>

@@ -15,6 +15,11 @@ export const ui = {
     downloadCv: { en: "Download CV", ar: "تحميل الـ CV" },
   },
   sections: {
+    work: { en: "Products I have worked on", ar: "منتجات اشتغلت عليها" },
+    workIntro: {
+      en: "Production systems I build with my team at Azm Squad.",
+      ar: "أنظمة شغالة فعليًا ببنيها مع فريقي في Azm Squad.",
+    },
     featured: { en: "Featured projects", ar: "مشاريع مميزة" },
     featuredIntro: {
       en: "Two complete platforms, designed, built and tested end to end.",

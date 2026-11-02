@@ -25,6 +25,9 @@ export type Project = {
   tagline: L;
   summary: L;
   stack: string[];
+  /** Set for products built at a company (not personal projects). */
+  company?: string;
+  period?: L;
   repo?: string;
   live?: string;
   /** Big numbers shown on the card and the case study. */

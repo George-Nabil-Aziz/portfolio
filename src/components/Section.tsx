@@ -14,7 +14,7 @@ export function Section({
 }) {
   return (
     <section id={id} className="scroll-mt-24 py-16 sm:py-24">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">{title}</h2>
         {intro && <p className="mt-3 max-w-2xl text-muted">{intro}</p>}
         <div className="mt-10">{children}</div>
