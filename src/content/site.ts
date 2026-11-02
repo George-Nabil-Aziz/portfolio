@@ -143,7 +143,7 @@ export const skills: SkillGroup[] = [
   },
   {
     title: { en: "Backend", ar: "الخلفية" },
-    items: ["C#", "ASP.NET Core", "Web API", "EF Core", "LINQ", "SQL Server", "SignalR", "Hangfire", "Node.js", "Express", "PostgreSQL"],
+    items: ["C#", "ASP.NET Core", "Web API", "EF Core", "LINQ", "SQL Server", "SignalR", "Hangfire", "Node.js", "NestJS", "Express", "PostgreSQL", "MongoDB"],
   },
   {
     title: { en: "Architecture & quality", ar: "المعمارية والجودة" },
@@ -180,7 +180,7 @@ export const workProjects: Project[] = [
       en: "AI video interviews, an applicant tracking system, an exam engine and CSV / Excel / PDF reporting for hiring teams.",
       ar: "مقابلات فيديو بالـ AI، ونظام تتبع متقدمين (ATS)، ومحرك امتحانات، وتقارير CSV / Excel / PDF لفرق التوظيف.",
     },
-    stack: ["Vue 3", "React", "Tailwind CSS", "ASP.NET Core", "Web API", "EF Core", "SQL Server"],
+    stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui", "TanStack Query", "i18next", "Socket.IO", "NestJS", "MongoDB", "Mongoose", "AWS S3", "Jest"],
     live: "https://thepass.ai/",
   },
 ];

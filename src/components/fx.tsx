@@ -5,6 +5,7 @@ import { useTheme } from "next-themes";
 import Aurora from "@/components/bits/Aurora";
 import ClickSpark from "@/components/bits/ClickSpark";
 import Magnet from "@/components/bits/Magnet";
+import Particles from "@/components/bits/Particles";
 import RotatingText from "@/components/bits/RotatingText";
 import ScrollVelocity from "@/components/bits/ScrollVelocity";
 import ShinyText from "@/components/bits/ShinyText";
@@ -56,6 +57,31 @@ export function HeroAurora() {
       speed={0.6}
       opacity={mode === "dark" ? 0.75 : 0.55}
     />
+  );
+}
+
+/** Slow drifting emerald particles behind the whole page. */
+export function PageParticles() {
+  const mode = useMode();
+  return (
+    <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10">
+      <Particles
+        particleColors={mode === "dark" ? ["#34d399", "#10b981", "#5eead4"] : ["#047857", "#059669", "#0d9488"]}
+        lightMode={mode === "light"}
+        particleCount={220}
+        particleSpread={12}
+        speed={0.12}
+        particleBaseSize={150}
+        alphaParticles
+        drift="up"
+        driftSpeed={0.6}
+        twinkle={0.5}
+        connections
+        connectionDistance={120}
+        hoverEffect="repel"
+        opacity={mode === "dark" ? 0.9 : 0.85}
+      />
+    </div>
   );
 }
 

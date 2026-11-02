@@ -23,7 +23,17 @@ export function Header({ locale }: { locale: Locale }) {
   return (
     <header className="sticky top-0 z-40 border-b border-border/70 bg-background/80 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-4 px-4 sm:px-6 lg:px-8">
-        <Link href={`/${locale}`} className="flex items-center gap-2 font-semibold">
+        <Link
+          href={`/${locale}`}
+          className="flex items-center gap-2 font-semibold"
+          onClick={(e) => {
+            // Already on the home page: scroll back to the very top instead of a no-op navigation.
+            if (pathname !== `/${locale}`) return;
+            e.preventDefault();
+            history.replaceState(null, "", `/${locale}`);
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
           <span className="grid size-8 place-items-center rounded-lg bg-accent text-sm text-background">
             {profile.initials}
           </span>
